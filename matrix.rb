@@ -1,7 +1,7 @@
 require 'csv'
 
 
-matrix = {
+data = {
   'BRO' => { 'BSN' => { 'W' => 10, 'L' => 12 },
              'CHC' => { 'W' => 15, 'L' => 7 },
              'CIN' => { 'W' => 15, 'L' => 7 },
@@ -30,7 +30,7 @@ matrix = {
 }
 
 
-teams = matrix.keys
+teams = data.keys
 
 
 header = [' '] + teams
@@ -41,7 +41,7 @@ rows = teams.map do |team|
     if team == opponent
       '-'
     else
-      matrix[team][opponent]['W']
+      data[team][opponent]['W']
     end
   end
 end
